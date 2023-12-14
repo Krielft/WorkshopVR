@@ -1211,7 +1211,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1915261369}
         m_TargetAssemblyTypeName: Restart, Assembly-CSharp
-        m_MethodName: Replay
+        m_MethodName: Replay2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
