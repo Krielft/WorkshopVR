@@ -9,10 +9,11 @@ public class Timer_countdown : MonoBehaviour
     public float TimeLeft;
     public bool TimerOn = false;
 
-    public TextMeshProUGUI TimerText;
+    public TextMeshProUGUI timeInGameText;
 
-    [Header("Panel de fin")]
-    public GameObject timeOver;
+    [Header("Panels")]
+    public GameObject inGameUI;
+    public GameObject endGamePanel;
 
     private void Awake()
     {
@@ -46,7 +47,7 @@ public class Timer_countdown : MonoBehaviour
         curentTime += 1;
         float minutes = Mathf.Floor(curentTime / 60);
         float seconds = Mathf.Floor(curentTime % 60);
-        TimerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+        timeInGameText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
     }
 
     private void EndTimer()
@@ -54,8 +55,9 @@ public class Timer_countdown : MonoBehaviour
         if (!TimerOn)
         {
             Time.timeScale = 0;
-            timeOver.SetActive(true);
-            this.gameObject.SetActive(false);
+            endGamePanel.SetActive(true);
+
+            inGameUI.SetActive(false);
         }
     }
 }
