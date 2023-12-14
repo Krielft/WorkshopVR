@@ -5,10 +5,15 @@ using UnityEngine;
 
 public class Timer_countdown : MonoBehaviour
 {
+    [Header("Timer")]
     public float TimeLeft;
     public bool TimerOn = false;
 
     public TextMeshProUGUI TimerText;
+
+    [Header("Panel de fin")]
+    public GameObject timeOver;
+
     private void Awake()
     {
         TimerOn = false;
@@ -49,6 +54,8 @@ public class Timer_countdown : MonoBehaviour
         if (!TimerOn)
         {
             Time.timeScale = 0;
+            timeOver.SetActive(true);
+            this.gameObject.SetActive(false);
         }
     }
 }
